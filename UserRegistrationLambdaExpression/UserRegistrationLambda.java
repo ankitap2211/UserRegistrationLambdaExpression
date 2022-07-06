@@ -46,5 +46,15 @@ public class UserRegistrationLambda {
         };
         m_number.validate();
 
+        //For password
+        ValidationUser password = () -> {
+            System.out.print("Enter password :");
+            String password_1 = sc.nextLine();
+            if (password_1.matches("[a-zA-Z]{8,}$"))
+                System.out.println(password_1 + " is valid");
+            else
+                System.out.println(password_1 + " is not valid");
+        };
+        password.validate();
     }
 }
