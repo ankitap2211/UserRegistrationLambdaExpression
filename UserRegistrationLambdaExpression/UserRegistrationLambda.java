@@ -67,5 +67,16 @@ public class UserRegistrationLambda {
                 System.out.println(password_2 + " is not valid");
         };
         pass_uppercase.validate();
+
+        //For password at least one number
+        ValidationUser pass_number = () -> {
+            System.out.print("Enter password which is at least one number :");
+            String password_3 = sc.nextLine();
+            if (password_3.matches("[0-9A-Za-z]{8,}$"))
+                System.out.println(password_3 + " is valid");
+            else
+                System.out.println(password_3 + " is not valid");
+        };
+        pass_number.validate();
     }
 }
