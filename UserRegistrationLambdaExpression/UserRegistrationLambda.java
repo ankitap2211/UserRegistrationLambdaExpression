@@ -23,4 +23,17 @@ public class UserRegistrationLambda {
                 System.out.println(fname + " is not valid");
         };
         firstName.validate();
+
+        //For last name
+        ValidationUser lastName = () -> {
+            System.out.print("Enter last name :");
+            String lname = sc.nextLine();
+            if (lname.matches("[A-Z][a-z]{3,}"))
+                System.out.println(lname + " is valid");
+            else
+                System.out.println(lname + " is not valid");
+        };
+        lastName.validate();
+
+    }
 }
