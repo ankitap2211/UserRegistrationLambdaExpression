@@ -56,5 +56,16 @@ public class UserRegistrationLambda {
                 System.out.println(password_1 + " is not valid");
         };
         password.validate();
+
+        //For password at least one upper case
+        ValidationUser pass_uppercase = () -> {
+            System.out.print("Enter password which is at least one upper case :");
+            String password_2 = sc.nextLine();
+            if (password_2.matches("[A-Z]{1}[a-z]{8,}"))
+                System.out.println(password_2 + " is valid");
+            else
+                System.out.println(password_2 + " is not valid");
+        };
+        pass_uppercase.validate();
     }
 }
