@@ -35,5 +35,16 @@ public class UserRegistrationLambda {
         };
         lastName.validate();
 
+        //For mobile number
+        ValidationUser m_number = () -> {
+            System.out.print("Enter mobile number :");
+            String mobile_number = sc.nextLine();
+            if (mobile_number.matches("^(91\\s)[789][0-9]{9}$"))
+                System.out.println(mobile_number + " is valid");
+            else
+                System.out.println(mobile_number + " is not valid");
+        };
+        m_number.validate();
+
     }
 }
